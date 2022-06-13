@@ -44,10 +44,11 @@ Out of **37921** filtered records : Vine Reviews (AKA Paid reviews) are **90** A
 Out of total 5-star ratings **14788** Vine Reviews with 5-star rating is **44** and Non-Vine Reviews with 5-star rating are **14744**
 
 **3) What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?**
-Percentage of Vine 5-star(paid) Reviews - **48.89%**
-Percentage of Non Vine (Unpaid) Reviews - **38.87%**
+Percentage of Vine 5-star(paid) Reviews       - **48.89%**
+Percentage of Non Vine 5-star(Unpaid) Reviews - **38.87%**
 *-----------------------------------------------------*
-Total Percentage of 5-star Reviews      - **87.76%**
+Total Percentage of 5-star Reviews            - **87.76%**
+Total Non 5-start Reviews		      - **12.24%**
 
 
 Code for all the above 3 questions
@@ -78,12 +79,12 @@ SELECT
 --Updating percentage column in the Vine_Paid_5Star .
 UPDATE Vine_paid_5star
 SET "5_star_percentage" = CONCAT (
-								cast(
-									round(
-										CAST (("5_star_rating"/total_Paid) * 100 AS Numeric(5, 2))
-										, 2) 
-									AS varchar(10000))
-								,'%');
+				cast(
+				    round(
+					CAST (("5_star_rating"/total_Paid) * 100 AS Numeric(5, 2))
+					 , 2) 
+				   AS varchar(10000))
+				,'%');
 
 --Select all values for Paid votes
 SELECT total_paid as "Total Paid",
@@ -93,7 +94,7 @@ SELECT total_paid as "Total Paid",
 FROM Vine_paid_5star;
 
 ```
-<p align="center"> <img src="Images/Vine_paid_5star.jpg"  align="center" height="200" width="600"></p>
+<p align="center"> <img src="Images/Vine_paid_5star.jpg"  align="center" height="100" width="600"></p>
 
 
 **VINE UNPAID DATA** 
@@ -122,12 +123,12 @@ SELECT
 --Updating percentage column in the Vine_UnPaid_5Star .   
 UPDATE Vine_unpaid_5star
 SET "5_star_percentage" = CONCAT (
-								cast(
-									round(
-										CAST (("5_star_rating"/total_unPaid) * 100 AS Numeric(5, 2))
-										, 2) 
-									AS varchar(10000))
-								,'%');
+				cast(
+				    round(
+					CAST (("5_star_rating"/total_unPaid) * 100 AS Numeric(5, 2))
+					, 2) 
+				     AS varchar(10000))
+				,'%');
 								
 --Select all values for UnPaid votes							
 SELECT total_unpaid as "Total UnPaid",
@@ -136,7 +137,7 @@ SELECT total_unpaid as "Total UnPaid",
 	   "5_star_percentage" as "5* Percentage"
 FROM Vine_unpaid_5star;
 ```
-<p align="center"><img src="Images/Vine_unpaid_5star.jpg"  align="center" height="200" width="600"></p>
+<p align="center"><img src="Images/Vine_unpaid_5star.jpg"  align="center" height="100" width="600"></p>
 
 *Note - The above SQL code could have been be written using more complex subqueries and single table, but that will take longer execution time and readability will reduce.
 
