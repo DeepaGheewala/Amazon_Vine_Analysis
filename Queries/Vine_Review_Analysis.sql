@@ -110,3 +110,13 @@ SELECT total_unpaid as "Total UnPaid",
 	   "Non_5_star_rating" as "Other than 5* Rating",
 	   "5_star_percentage" as "5* Percentage"
 FROM Vine_unpaid_5star;
+
+
+---Additional Data Analysis
+---Select verfied_purchase data review rating count for each different ratings
+SELECT COUNT(*),verified_purchase, Vine, star_rating as Rating
+FROM Vine_Above50_percent 
+GROUP BY verified_purchase,Vine, star_rating
+HAVING verified_purchase ='N'
+ORDER BY vine
+			 
