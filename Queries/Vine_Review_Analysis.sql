@@ -45,6 +45,11 @@ SELECT
      WHERE vine = 'Y'
        AND star_rating = 5) AS "5_star_rating",
      
+	 (SELECT cast(count(*) AS float)
+     FROM Vine_Above50_percent
+     WHERE vine = 'Y'
+       AND star_rating <> 5) AS "Non_5_star_rating",
+	   
 	 NULL AS "5_star_percentage" 
 	 INTO Vine_paid_5star;
 --Select * from Vine_paid_5star	[Calculate for the Paid 5 star vote data]	
@@ -62,6 +67,7 @@ SET "5_star_percentage" = CONCAT (
 --Select all values for Paid votes
 SELECT total_paid as "Total Paid",
        "5_star_rating" as "5* Rating",
+	   "Non_5_star_rating" as "Other than 5* Rating",
 	   "5_star_percentage" as "5* Percentage"
 FROM Vine_paid_5star;
 
@@ -81,6 +87,11 @@ SELECT
    WHERE vine = 'N'
      AND star_rating = 5) AS "5_star_rating",
    
+   (SELECT cast(count(*) AS float)
+     FROM Vine_Above50_percent
+     WHERE vine = 'N'
+       AND star_rating <> 5) AS "Non_5_star_rating",
+	   
    NULL AS "5_star_percentage" INTO Vine_unpaid_5star;
    
 --Updating percentage column in the Vine_UnPaid_5Star .   
@@ -96,5 +107,6 @@ SET "5_star_percentage" = CONCAT (
 --Select all values for UnPaid votes							
 SELECT total_unpaid as "Total UnPaid",
        "5_star_rating" as "5* Rating",
+	   "Non_5_star_rating" as "Other than 5* Rating",
 	   "5_star_percentage" as "5* Percentage"
 FROM Vine_unpaid_5star;
