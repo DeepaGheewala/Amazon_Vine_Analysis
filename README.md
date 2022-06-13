@@ -37,18 +37,21 @@ WHERE CAST(helpful_votes AS FLOAT)/CAST(total_votes AS FLOAT) >=0.5;
 ```
 <p align="center"> <img src="Images/Vine_Above50_percent.jpg"  align="center" height="400" width="800"></p>
 
-**1) How many Vine reviews and non-Vine reviews were there?**
-Out of **37921** filtered records : Vine Reviews (AKA Paid reviews) are **90** AND Non-Vine Reviews (AKA Unpaid Reviews) are **37831**
+**1) How many Vine reviews and non-Vine reviews were there?**  
 
-**2) How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?**
-Out of total 5-star ratings **14788** Vine Reviews with 5-star rating is **44** and Non-Vine Reviews with 5-star rating are **14744**
+ - Out of **37921** filtered records : Vine Reviews (AKA Paid reviews) are **90** AND Non-Vine Reviews (AKA Unpaid Reviews) are **37831**
 
-**3) What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?**
-Percentage of Vine 5-star(paid) Reviews       - **48.89%**
-Percentage of Non Vine 5-star(Unpaid) Reviews - **38.87%**
-*-----------------------------------------------------*
-Total Percentage of 5-star Reviews            - **87.76%**
-Total Non 5-start Reviews		      - **12.24%**
+**2) How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?**  
+
+ - Out of total 5-star ratings **14788** Vine Reviews with 5-star rating is **44** and Non-Vine Reviews with 5-star rating are **14744**
+
+**3) What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?**  
+
+ Percentage of Vine 5-star(paid) Reviews        - **48.89%**  
+ Percentage of Non Vine 5-star(Unpaid) Reviews - **38.87%**  
+ *---------------------------------------------------------*  
+ Total Percentage of 5-star Reviews             - **87.76%**  
+ Total Non 5-start Reviews		        - **12.24%**  
 
 
 Code for all the above 3 questions
@@ -140,6 +143,20 @@ FROM Vine_unpaid_5star;
 <p align="center"><img src="Images/Vine_unpaid_5star.jpg"  align="center" height="100" width="600"></p>
 
 *Note - The above SQL code could have been be written using more complex subqueries and single table, but that will take longer execution time and readability will reduce.
+
+## Summary
+
+<p align="center"><img src="Images/Vine_paid_5star.jpg"  align="center" height="70" width="500"></p>
+<p align="center"><img src="Images/Vine_unpaid_5star.jpg"  align="center" height="70" width="500"></p>
+
+### Conclusion
+- IF we see comparison of Paid and Unpaid Reviews, the Paid reviews are way more less compared to unpaid one. 
+
+- Among the Paid review **48.89%** were 5-star which makes it can be considered as positively biased rating when compared to the Unpaid ones which is **38.87%** 
+
+- However, the ratio of Paid : Unpaid is 0.237 which is very less. Hence the data cannot be overall called as biased.
+
+- Other Information we could find is Verfied users impact on the paid and non paid reviews 
 
 ## Resources
 ### Data Source
