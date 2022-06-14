@@ -150,11 +150,11 @@ FROM Vine_unpaid_5star;
 <p align="center"><img src="Images/Vine_unpaid_5star.jpg"  align="center" height="70" width="500"></p>
 
 ### Conclusion
-- IF we see comparison of Paid and Unpaid Reviews, the Paid reviews are way more less compared to unpaid one. 
+- IF we see comparison of Paid and Unpaid Reviews, the Paid reviews are way more less compared to unpaid one. This clearly shows its a bias data.
 
 - Among the Paid review **48.89%** were 5-star which makes it can be considered as positively biased rating when compared to the Unpaid ones which is **38.87%** 
 
-- However, the ratio of Paid : Unpaid is 0.237 which is very less. Hence the data cannot be overall called as biased.
+- However, the ratio of Paid : Unpaid is 0.237 which is very less. Hence the data is clearly called as biased.
 
 - Other Information we could find is Verfied users impact on the paid and non paid reviews 
 <p align="center"><img src="Images/verified_purchase_rating.jpg"  align="center" height="100" width="500"></p>
